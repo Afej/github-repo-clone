@@ -95,6 +95,20 @@ body {
   transition: 0.3s width ease-in-out;
 }
 
+.header .header-search-nav form label .search-bar::placeholder {
+  color: white;
+}
+
+.header .header-search-nav form label .search-bar:focus-visible {
+  width: 450px;
+  background-color: #fff;
+  color: #444d56;
+}
+
+.header .header-search-nav form label .search-bar:focus-visible ~ img {
+  display: none;
+}
+
 .header .header-search-nav form label .search-bar-img {
   margin-right: 8px !important;
 }
@@ -186,8 +200,6 @@ main header {
   max-width: 100%;
   height: 3rem;
   margin-top: 1.5rem;
-  margin-right: auto;
-  margin-left: auto;
   background-color: #fff;
   align-items: center;
   border-bottom: 1px solid #e1e4e8;
@@ -352,6 +364,10 @@ main .main-profile .profile-info-details li svg {
   margin-right: 5px;
 }
 
+main .main-profile details {
+  display: none;
+}
+
 main .main-profile details summary::-webkit-details-marker {
   display: none;
 }
@@ -395,6 +411,10 @@ main .repo-section .repo-header label .repo-search {
   color: #24292e;
   vertical-align: middle;
   border: 1px solid #e1e4e8;
+}
+
+main .repo-section .repo-header .details-wrapper {
+  display: flex;
 }
 
 main .repo-section .repo-header details {
@@ -541,6 +561,9 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   .header .header-search-nav nav ul.nav-menu li.nav-item:first-of-type {
     display: none;
   }
+  main .main-profile .profile-img .profile-status {
+    right: 0px;
+  }
 }
 
 @media (max-width: 767.5px) {
@@ -564,6 +587,37 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   .header .header-search-nav {
     display: none;
   }
+  .header .header-search-nav.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 1rem;
+    background-color: inherit;
+    z-index: 100;
+  }
+  .header .header-search-nav.show form {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .header .header-search-nav.show form input {
+    width: 100%;
+  }
+  .header .header-search-nav.show .header-nav {
+    width: 100%;
+  }
+  .header .header-search-nav.show .header-nav .nav-menu {
+    flex-direction: column;
+  }
+  .header .header-search-nav.show .header-nav .nav-menu .nav-item {
+    padding: 8px 0 !important;
+    margin: 0;
+    border-top: 1px solid #444d56;
+  }
   .header .header-item-wrapper .header-item:not(:last-of-type) {
     margin-right: 0;
   }
@@ -574,7 +628,8 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
     display: none;
   }
   .main .container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
   .main .container .main-profile {
     padding: 0;
@@ -618,7 +673,7 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
     border: 1px solid rgba(27, 31, 35, 0.15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px;
-    margin: 0 0 0.5rem;
+    margin: 0 0 1rem;
   }
   .main .container .main-profile-content details summary.status svg {
     margin-right: 4px;
@@ -626,10 +681,28 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   .main .container .main-profile-content .edit-btn {
     margin-top: 0;
   }
-  .main .container .mobile {
-    display: flex;
+  .main .repo-section {
+    margin-top: 16px;
+    padding: 0 8px;
   }
-  .main .container .mobile a {
+  .main .repo-section .repo-header {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .main .repo-section .repo-header label {
+    width: 100%;
+    margin-right: 0;
+  }
+  .main .mobile {
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow-x: auto;
+    margin: 0;
+  }
+  .main .mobile a {
     padding: 8px 16px;
     font-size: 14px;
     line-height: 30px;
@@ -642,20 +715,16 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
     transition: border-bottom-color 0.36s ease-in;
     text-decoration: none;
   }
-  .main .container .mobile a.active {
+  .main .mobile a.active {
     border-bottom: solid 2px #f9826c;
     outline: 1px dotted transparent;
     outline-offset: -1px;
     font-weight: 600;
   }
-  .main .container .mobile a svg {
+  .main .mobile a svg {
     margin-right: 8px;
     vertical-align: text-bottom;
     display: inline-block;
     fill: #24292e80;
-  }
-  .main .repo-section {
-    margin-top: 16px;
-    padding: 0 8px;
   }
 }
