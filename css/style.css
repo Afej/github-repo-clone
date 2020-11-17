@@ -209,6 +209,7 @@ main header {
 main header .sub-profile {
   grid-column: 2;
   padding: 0 30px;
+  display: none;
 }
 
 main header .sub-profile .sub-profile-mini {
@@ -225,6 +226,7 @@ main header .sub-profile .sub-profile-mini img {
 }
 
 main header nav {
+  grid-column: 3;
   display: flex;
   margin-left: 5%;
 }
@@ -267,17 +269,18 @@ main .container {
 
 main .main-profile {
   padding: 0 16px;
+  margin-top: -40px;
 }
 
 main .main-profile .main-profile-content {
   position: relative;
-  z-index: 4;
 }
 
 main .main-profile .profile-img {
   position: relative;
   width: 100%;
   max-width: 280px;
+  z-index: 30;
 }
 
 main .main-profile .profile-img .avatar-user {
