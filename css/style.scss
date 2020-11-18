@@ -33,6 +33,10 @@ body {
     rgba(255, 255, 255, 0.25) 0px 1px 0px 0px;
 }
 
+.hide {
+  display: none !important;
+}
+
 // header
 .header {
   display: flex;
@@ -460,6 +464,8 @@ main {
       list-style: none;
 
       .repo-info-wrapper {
+        max-width: 50vw;
+
         h2 {
           word-break: break-all;
           margin-bottom: 4px;
@@ -478,6 +484,14 @@ main {
           margin-bottom: 8px;
           padding-right: 24px;
           color: #586069;
+          margin-right: auto;
+          display: flex;
+          flex-direction: column;
+
+          a {
+            text-decoration: none;
+            color: #586069 !important;
+          }
         }
 
         .repo-stats {

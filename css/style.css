@@ -30,6 +30,10 @@ body {
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px;
 }
 
+.hide {
+  display: none !important;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -452,6 +456,10 @@ main .repo-section .repo-list .repo-list-item {
   list-style: none;
 }
 
+main .repo-section .repo-list .repo-list-item .repo-info-wrapper {
+  max-width: 50vw;
+}
+
 main .repo-section .repo-list .repo-list-item .repo-info-wrapper h2 {
   word-break: break-all;
   margin-bottom: 4px;
@@ -470,6 +478,14 @@ main .repo-section .repo-list .repo-list-item .repo-info-wrapper .repo-desc {
   margin-bottom: 8px;
   padding-right: 24px;
   color: #586069;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+main .repo-section .repo-list .repo-list-item .repo-info-wrapper .repo-desc a {
+  text-decoration: none;
+  color: #586069 !important;
 }
 
 main .repo-section .repo-list .repo-list-item .repo-info-wrapper .repo-stats {

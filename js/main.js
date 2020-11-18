@@ -2,6 +2,7 @@ const toggler = document.getElementById("toggler");
 const miniProfile = document.querySelector(".sub-profile");
 const mainProfile = document.querySelector(".profile-wrapper .profile-names");
 
+// debounce function
 function debounce(func, wait, immediate) {
   var timeout;
   return function () {
@@ -18,6 +19,7 @@ function debounce(func, wait, immediate) {
   };
 }
 
+// check if an element is in viewport
 function isInViewport(el) {
   const rect = el.getBoundingClientRect();
   return (
@@ -29,6 +31,7 @@ function isInViewport(el) {
   );
 }
 
+// Event listeners
 toggler.addEventListener("click", () => {
   document.querySelector(".header-search-nav").classList.toggle("show");
 });
@@ -39,6 +42,7 @@ window.addEventListener("scroll", () => {
     : (miniProfile.style.display = "block");
 });
 
+// graphql query
 let query = `{
   user(login: "afej") {
     avatarUrl
@@ -49,8 +53,7 @@ let query = `{
     followers {
       totalCount
     }
-    bio
-    repositories(privacy: PUBLIC, first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+    repositories(privacy: PUBLIC, first: 20, orderBy: {field: UPDATED_AT, direction: DESC}) {
       edges {
         node {
           name
@@ -83,14 +86,8 @@ let query = `{
       }
       totalCount
     }
-    status {
-      emojiHTML
-      emoji
-      message
-    }
     bio
     createdAt
-    twitterUsername
     location
     login
     starredRepositories {
@@ -102,19 +99,16 @@ let query = `{
 
 const url = "https://api.github.com/graphql";
 
-//  7751f1cda42c112d437e0de43f97bd735ab52f7d
+const token = "Nzc1MWYxY2RhNDJjMTEyZDQzN2UwZGU0M2Y5N2JkNzM1YWI1MmY3ZA==";
 
-const options = {
+fetch(url, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    Authorization: `bearer 7751f1cda42c112d437e0de43f97bd735ab52f7d`,
+    Authorization: `bearer ${atob(token)}`,
   },
   body: JSON.stringify({ query }),
-};
-
-fetch(url, options)
+})
   .then((res) => res.json())
-  .then((data) => console.log(data))
-  // .then(populateUI)
+  .then((data) => populateUI(data.data.user))
   .catch(console.error);
