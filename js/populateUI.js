@@ -85,7 +85,9 @@ const setReqData = {
     xlocation.innerText = location;
   },
   setRepoCount(count) {
-    totalRepos.innerText = count;
+    for (let repo of totalRepos) {
+      repo.innerText = count;
+    }
   },
   setRepositories(repositories) {
     let repoHTML = "";

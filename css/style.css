@@ -656,7 +656,7 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   }
   .main .container .main-profile-content {
     padding: 0 8px;
-    margin: 0 0 24px;
+    margin: 0;
   }
   .main .container .main-profile-content .profile-wrapper {
     display: flex;
@@ -701,6 +701,42 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   .main .container .main-profile-content .edit-btn {
     margin-top: 0;
   }
+  .main header.mobile {
+    display: flex;
+    margin-top: 0;
+  }
+  .main header.mobile nav {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    overflow-x: auto;
+    margin: 0;
+  }
+  .main header.mobile a {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #24292e;
+    text-align: center;
+    white-space: nowrap;
+    background-color: initial;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.36s ease-in;
+    text-decoration: none;
+  }
+  .main header.mobile a.active {
+    border-bottom: solid 2px #f9826c;
+    outline: 1px dotted transparent;
+    outline-offset: -1px;
+    font-weight: 600;
+  }
+  .main header.mobile a svg {
+    margin-right: 8px;
+    vertical-align: text-bottom;
+    display: inline-block;
+    fill: #24292e80;
+  }
   .main .repo-section {
     margin-top: 16px;
     padding: 0 8px;
@@ -715,40 +751,7 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
     margin-right: 0;
   }
   .main .repo-section .repo-list .repo-list-item .repo-info-wrapper {
-    max-width: 70vw;
-  }
-  .main .mobile {
-    display: flex;
-    position: sticky !important;
-    top: 0;
-    left: 0;
-    overflow-x: auto;
-    margin: 0;
-  }
-  .main .mobile a {
-    padding: 8px 16px;
-    font-size: 14px;
-    line-height: 30px;
-    color: #24292e;
-    text-align: center;
-    white-space: nowrap;
-    background-color: initial;
-    border: 0;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom-color 0.36s ease-in;
-    text-decoration: none;
-  }
-  .main .mobile a.active {
-    border-bottom: solid 2px #f9826c;
-    outline: 1px dotted transparent;
-    outline-offset: -1px;
-    font-weight: 600;
-  }
-  .main .mobile a svg {
-    margin-right: 8px;
-    vertical-align: text-bottom;
-    display: inline-block;
-    fill: #24292e80;
+    max-width: 65vw;
   }
   .footer {
     flex-direction: column;

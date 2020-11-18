@@ -208,7 +208,6 @@ main {
     max-width: 100%;
     height: 3rem;
     margin-top: 1.5rem;
-
     background-color: #fff;
     align-items: center;
     border-bottom: 1px solid #e1e4e8;
@@ -688,7 +687,7 @@ main {
 
       .main-profile-content {
         padding: 0 8px;
-        margin: 0 0 24px;
+        margin: 0;
 
         .profile-wrapper {
           display: flex;
@@ -745,33 +744,18 @@ main {
       }
     }
 
-    .repo-section {
-      margin-top: 16px;
-      padding: 0 8px;
-
-      .repo-header {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 16px;
-
-        label {
-          width: 100%;
-          margin-right: 0;
-        }
-      }
-
-      .repo-list .repo-list-item .repo-info-wrapper {
-        max-width: 70vw;
-      }
-    }
-
-    .mobile {
+    header.mobile {
       display: flex;
-      position: sticky !important;
-      top: 0;
-      left: 0;
-      overflow-x: auto;
-      margin: 0;
+      // grid-template-columns: 1fr;
+      margin-top: 0;
+
+      nav {
+        position: sticky !important;
+        top: 0;
+        left: 0;
+        overflow-x: auto;
+        margin: 0;
+      }
 
       a {
         padding: 8px 16px;
@@ -799,6 +783,26 @@ main {
           display: inline-block;
           fill: #24292e80;
         }
+      }
+    }
+
+    .repo-section {
+      margin-top: 16px;
+      padding: 0 8px;
+
+      .repo-header {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        label {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+
+      .repo-list .repo-list-item .repo-info-wrapper {
+        max-width: 65vw;
       }
     }
   }

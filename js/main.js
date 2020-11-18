@@ -99,7 +99,7 @@ let query = `{
 
 const url = "https://api.github.com/graphql";
 
-const token = "Nzc1MWYxY2RhNDJjMTEyZDQzN2UwZGU0M2Y5N2JkNzM1YWI1MmY3ZA==";
+const token = "NjQxMjEyNjZkNDRmYjQ5ZmIxYWI5ZGJjZDk4YTBjZTZkODE5MjA0Ng==";
 
 fetch(url, {
   method: "POST",
