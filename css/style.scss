@@ -805,6 +805,11 @@ main {
         max-width: 65vw;
       }
     }
+
+    .repo-section .repo-list .repo-list-item .repo-btn-wrapper {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .footer {
@@ -822,5 +827,9 @@ main {
 @media (max-width: 500px) {
   .main .container .main-profile-content .profile-img {
     width: 65px;
+  }
+
+  .main .repo-section .repo-header a.new-repo {
+    margin-left: 0;
   }
 }

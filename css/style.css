@@ -753,6 +753,10 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   .main .repo-section .repo-list .repo-list-item .repo-info-wrapper {
     max-width: 65vw;
   }
+  .main .repo-section .repo-list .repo-list-item .repo-btn-wrapper {
+    display: flex;
+    align-items: center;
+  }
   .footer {
     flex-direction: column;
     align-items: initial;
@@ -767,5 +771,8 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
 @media (max-width: 500px) {
   .main .container .main-profile-content .profile-img {
     width: 65px;
+  }
+  .main .repo-section .repo-header a.new-repo {
+    margin-left: 0;
   }
 }
