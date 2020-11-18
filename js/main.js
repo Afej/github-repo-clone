@@ -38,3 +38,83 @@ window.addEventListener("scroll", () => {
     ? (miniProfile.style.display = "none")
     : (miniProfile.style.display = "block");
 });
+
+let query = `{
+  user(login: "afej") {
+    avatarUrl
+    name
+    following {
+      totalCount
+    }
+    followers {
+      totalCount
+    }
+    bio
+    repositories(privacy: PUBLIC, first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+      edges {
+        node {
+          name
+          watchers {
+            totalCount
+          }
+          url
+          description
+          stargazerCount
+          forkCount
+          licenseInfo {
+            name
+            nickname
+            url
+          }
+          primaryLanguage {
+            name
+            color
+          }
+          pushedAt
+          parent {
+            url
+            name
+            nameWithOwner
+            forkCount
+            stargazerCount
+          }
+          isFork
+        }
+      }
+      totalCount
+    }
+    status {
+      emojiHTML
+      emoji
+      message
+    }
+    bio
+    createdAt
+    twitterUsername
+    location
+    login
+    starredRepositories {
+      totalCount
+    }
+  }
+}
+`;
+
+const url = "https://api.github.com/graphql";
+
+//  7751f1cda42c112d437e0de43f97bd735ab52f7d
+
+const options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `bearer 7751f1cda42c112d437e0de43f97bd735ab52f7d`,
+  },
+  body: JSON.stringify({ query }),
+};
+
+fetch(url, options)
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  // .then(populateUI)
+  .catch(console.error);

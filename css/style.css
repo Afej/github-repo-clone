@@ -636,6 +636,7 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   }
   .main .container .main-profile {
     padding: 0;
+    margin-top: 4px;
   }
   .main .container .main-profile-content {
     padding: 0 8px;
@@ -699,7 +700,7 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   }
   .main .mobile {
     display: flex;
-    position: sticky;
+    position: sticky !important;
     top: 0;
     left: 0;
     overflow-x: auto;
@@ -729,5 +730,20 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
     vertical-align: text-bottom;
     display: inline-block;
     fill: #24292e80;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: initial;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .footer > a {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .main .container .main-profile-content .profile-img {
+    width: 65px;
   }
 }
