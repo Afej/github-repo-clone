@@ -177,7 +177,7 @@ body {
   border: 1px solid #ffffffb3;
   border-radius: 6px;
   box-shadow: 0 0 1px 2px #e3e3e4;
-  z-index: 10;
+  z-index: 40;
 }
 
 .header .header-item-wrapper .header-item details summary {
@@ -713,6 +713,9 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   .main .repo-section .repo-header label {
     width: 100%;
     margin-right: 0;
+  }
+  .main .repo-section .repo-list .repo-list-item .repo-info-wrapper {
+    max-width: 70vw;
   }
   .main .mobile {
     display: flex;

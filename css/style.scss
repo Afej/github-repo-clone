@@ -178,7 +178,7 @@ body {
         border: 1px solid #ffffffb3;
         border-radius: 6px;
         box-shadow: 0 0 1px 2px #e3e3e4;
-        z-index: 10;
+        z-index: 40;
       }
     }
 
@@ -758,6 +758,10 @@ main {
           width: 100%;
           margin-right: 0;
         }
+      }
+
+      .repo-list .repo-list-item .repo-info-wrapper {
+        max-width: 70vw;
       }
     }
 
