@@ -744,11 +744,12 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
   .main .repo-section .repo-header {
     width: 100%;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 8px;
   }
   .main .repo-section .repo-header label {
     width: 100%;
     margin-right: 0;
+    margin-bottom: 8px;
   }
   .main .repo-section .repo-list .repo-list-item .repo-info-wrapper {
     max-width: 65vw;
@@ -773,6 +774,24 @@ main .repo-section .repo-list .repo-list-item .repo-btn-wrapper .star-repo svg {
     width: 65px;
   }
   .main .repo-section .repo-header a.new-repo {
-    margin-left: 0;
+    margin-left: auto;
+  }
+  .main .repo-section .repo-header {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 390px) {
+  .main .repo-section .repo-header {
+    position: relative;
+  }
+  .main .repo-section .repo-header .details-wrapper {
+    position: relative;
+    left: -5px;
+  }
+  .main .repo-section .repo-header a.new-repo {
+    position: absolute;
+    right: -5px;
+    top: 57%;
   }
 }
