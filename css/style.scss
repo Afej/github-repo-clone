@@ -793,11 +793,12 @@ main {
       .repo-header {
         width: 100%;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 8px;
 
         label {
           width: 100%;
           margin-right: 0;
+          margin-bottom: 8px;
         }
       }
 
@@ -821,15 +822,45 @@ main {
     > a {
       display: none;
     }
+
+    .footer-nav {
+      justify-content: space-evenly;
+    }
   }
 }
 
 @media (max-width: 500px) {
-  .main .container .main-profile-content .profile-img {
-    width: 65px;
-  }
+  .main {
+    .container .main-profile-content .profile-img {
+      width: 65px;
+    }
 
-  .main .repo-section .repo-header a.new-repo {
-    margin-left: 0;
+    .repo-section .repo-header a.new-repo {
+      margin-left: auto;
+    }
+
+    .repo-section .repo-header {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .main {
+    .repo-section .repo-header {
+      position: relative;
+
+      .details-wrapper {
+        position: relative;
+        left: -5px;
+      }
+
+      a.new-repo {
+        // margin-left: 14px;
+        position: absolute;
+        right: -5px;
+        top: 57%;
+      }
+    }
   }
 }
